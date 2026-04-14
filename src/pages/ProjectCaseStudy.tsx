@@ -202,7 +202,7 @@ const projectData: Record<string, any> = {
       title: "Synapse Scholar", 
       subtitle: "Transforming notes into interactive tutors, smart summaries, and adaptive quizzes with AI.", 
       color: "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)",
-      image: "/assets/synapse_hero_v4.png"
+      image: "/assets/synapse_hero.png"
     },
     s1_overview: { 
       intro: "Synapse Scholar is an AI-powered EdTech platform designed to help students learn smarter. It turns static notes into dynamic, interactive learning experiences.", 

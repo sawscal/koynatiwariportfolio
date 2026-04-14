@@ -108,7 +108,7 @@ const Home = () => {
                 title: "Synapse Scholar",
                 desc: "An AI-powered EdTech platform that transforms notes into interactive tutors, smart summaries, and adaptive quizzes.",
                 color: "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)",
-                image: "/assets/synapse_hero_v4.png"
+                image: "/assets/synapse_hero.png"
               }
             ].map((proj, idx) => (
               <motion.div

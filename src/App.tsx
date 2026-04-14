@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
@@ -8,44 +8,6 @@ import ProjectCaseStudy from './pages/ProjectCaseStudy';
 import './App.css';
 
 // Generic 3D Mouse Tilt Wrapper
-const TiltWrapper = ({ children, maxTilt = 15, scale = 1.05 }: { children: React.ReactNode, maxTilt?: number, scale?: number }) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const xPct = (x / rect.width - 0.5) * 2;
-    const yPct = (y / rect.height - 0.5) * 2;
-
-    setRotation({
-      x: yPct * maxTilt * -1,
-      y: xPct * maxTilt,
-    });
-  };
-
-  return (
-    <motion.div
-      ref={ref}
-      className="tilt-wrapper"
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
-      animate={{
-        rotateX: isHovering ? rotation.x : 0,
-        rotateY: isHovering ? rotation.y : 0,
-        scale: isHovering ? scale : 1,
-      }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-    >
-      {children}
-    </motion.div>
-  );
-};
 
 // Custom Cursor Implementation
 const CustomCursor = () => {
@@ -157,17 +119,17 @@ function App() {
               <Link to="/#home" className="nav-link">About</Link>
               <Link to="/#work" className="nav-link">Projects</Link>
               <Link to="/ai" className="nav-link">AI build</Link>
-              <Link to="#contact" className="nav-link" onClick={(e) => {
+              <Link to="#contact" className="nav-link" onClick={() => {
                 handleLinkClick();
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
               }}>Contact</Link>
             </nav>
 
-            <div className="nav-links">
+            <div className="header-actions">
               <span className="clock" suppressHydrationWarning>{time}</span>
               <button
                 onClick={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
-                className="nav-link"
+                className="nav-link theme-toggle"
                 style={{ background: 'none', border: 'none', cursor: 'none', padding: 0, display: 'flex', alignItems: 'center' }}
                 aria-label="Toggle Theme"
               >
@@ -203,7 +165,7 @@ function App() {
             <Link to="/#home" className="mobile-menu-link" onClick={handleLinkClick}>Home</Link>
             <Link to="/#work" className="mobile-menu-link" onClick={handleLinkClick}>Projects</Link>
             <Link to="/ai" className="mobile-menu-link" onClick={handleLinkClick}>AI Builds</Link>
-            <Link to="#contact" className="mobile-menu-link" onClick={(e) => {
+            <Link to="#contact" className="mobile-menu-link" onClick={() => {
               handleLinkClick();
               document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
             }}>Contact</Link>

@@ -15,58 +15,9 @@ const DramaticSubHeader = ({ title }: { title: string }) => (
   </h2>
 );
 
-const FullBleedPlaceholder = ({ text, height = '60vh', background = 'var(--bg-secondary)', margin = '4rem 0' }: { text: string, height?: string, background?: string, margin?: string }) => (
-  <div className="full-bleed-container" style={{ height, background, margin, borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-    <div style={{ 
-      textAlign: 'center',
-      color: 'var(--text-primary)', 
-      opacity: 0.3,
-      fontSize: 'clamp(2rem, 5vw, 4rem)', 
-      fontWeight: 600,
-      letterSpacing: '-0.02em',
-      maxWidth: '80%'
-    }}>
-      {text}
-    </div>
-  </div>
-);
 
 // --- CRM / Professional Layout Components ---
-const MetricCard = ({ value, label, delay = 0 }: { value: string, label: string, delay?: number }) => (
-  <motion.div 
-    initial={{ opacity: 0, scale: 0.9 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    transition={{ delay, duration: 0.6 }}
-    viewport={{ once: true }}
-    className="metric-card-styled"
-  >
-    <div className="metric-v-huge">{value}</div>
-    <div style={{ fontSize: '1rem', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{label}</div>
-  </motion.div>
-);
 
-const ProblemSolutionCard = ({ problem, solution, impact, rationale }: { problem: string, solution: string, impact: string, rationale: string }) => (
-  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', marginTop: '4rem', padding: '4rem', background: 'var(--bg-secondary)', borderRadius: '32px' }}>
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-      <SectionNumber num="The Problem" />
-      <p style={{ fontSize: '1.25rem', lineHeight: 1.5, opacity: 0.9 }}>{problem}</p>
-    </div>
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-       <div>
-         <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', textTransform: 'uppercase', marginBottom: '0.5rem', display: 'block' }}>Solution</span>
-         <p style={{ fontWeight: 500 }}>{solution}</p>
-       </div>
-       <div>
-         <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', textTransform: 'uppercase', marginBottom: '0.5rem', display: 'block' }}>Rationale</span>
-         <p style={{ fontSize: '0.95rem', opacity: 0.8 }}>{rationale}</p>
-       </div>
-       <div style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '16px', border: '1px solid var(--glass-border)' }}>
-         <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', textTransform: 'uppercase', marginBottom: '0.5rem', display: 'block' }}>Impact</span>
-         <p style={{ fontWeight: 600, color: 'var(--text-primary)' }}>{impact}</p>
-       </div>
-    </div>
-  </div>
-);
 
 // --- Persona Slider Component ---
 const PersonaSlider = ({ personas }: { personas: any[] }) => {

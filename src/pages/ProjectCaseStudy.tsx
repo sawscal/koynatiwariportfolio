@@ -192,7 +192,12 @@ const projectData: Record<string, any> = {
     ]
   },
   "fintech-mobile-application": {
-    hero: { title: "Fintech Mobile Application", subtitle: "Simplified crypto trading for the next generation of investors.", gradient: "linear-gradient(120deg, #f6d365 0%, #fda085 100%)" },
+    hero: { 
+      title: "Fintech Mobile Application", 
+      subtitle: "Simplified crypto trading for the next generation of investors.", 
+      gradient: "linear-gradient(120deg, #f6d365 0%, #fda085 100%)",
+      image: "/assets/fintech_hero.png"
+    },
     s1_overview: { intro: "A new-gen crypto trading platform designed for entry-level Gen Z investors.", role: "Lead UX Researcher", duration: "16 Weeks", tools: "Figma, FigJam" },
     s2_problem: "Crypto is intimidating. Most exchanges look like airplane cockpits. We built this to make trading feel as easy as sending a text.",
     s12_learnings: ["Controlled friction builds trust.", "Clutter is the enemy of finance.", "Mobile-first doesn't mean feature-less."]
@@ -446,9 +451,7 @@ const ProjectCaseStudy = () => {
                   {isStreetBite ? (
                     <img src="/assets/streetbite_flow.png" alt="StreetBite Flow" style={{ width: '100%', maxWidth: '900px', display: 'block', margin: '0 auto' }} />
                    ) : (
-                    <div style={{ width: '100%', height: '30vh', background: 'var(--bg-secondary)', borderRadius: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <p style={{ fontSize: '1.5rem', opacity: 0.5 }}>[ AI EdTech Discovery Flow ]</p>
-                    </div>
+                    <img src="/assets/synapse_flow.png" alt="Synapse Flow" style={{ width: '100%', maxWidth: '900px', display: 'block', margin: '0 auto', borderRadius: '32px' }} />
                    )}
                </div>
             </section>
@@ -462,14 +465,14 @@ const ProjectCaseStudy = () => {
                      {isStreetBite ? (
                         <img src="/assets/streetbite_sketches.jpg" alt="Early Sketches" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       ) : (
-                        <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.3 }}>[ Dashboard Ideation ]</div>
+                        <img src="/assets/synapse_sketches.jpg" alt="Dashboard Ideation" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       )}
                   </div>
                   <div style={{ height: '45vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_structure.jpg" : "/assets/synapse_structure.jpg")}>
                       {isStreetBite ? (
                         <img src="/assets/streetbite_structure.jpg" alt="Structure Flow" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       ) : (
-                        <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.3 }}>[ IA Mapping ]</div>
+                        <img src="/assets/synapse_structure.jpg" alt="IA Mapping" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       )}
                   </div>
                </div>

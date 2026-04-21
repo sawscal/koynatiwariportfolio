@@ -101,7 +101,8 @@ const Home = () => {
                 id: "fintech-mobile-application",
                 title: "Fintech Mobile Application",
                 desc: "Designed and built the entire user flow for a new-gen crypto trading platform currently used by 100K+ daily active users.",
-                color: "linear-gradient(120deg, #f6d365 0%, #fda085 100%)"
+                color: "linear-gradient(120deg, #f6d365 0%, #fda085 100%)",
+                image: "/assets/fintech_hero.png"
               },
               {
                 id: "synapse-scholar",

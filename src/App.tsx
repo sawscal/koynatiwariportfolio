@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
-import AIPage from './pages/AIPage';
 import ProjectCaseStudy from './pages/ProjectCaseStudy';
 import './App.css';
 
@@ -118,7 +117,6 @@ function App() {
             <nav className="nav-links">
               <Link to="/#home" className="nav-link">About</Link>
               <Link to="/#work" className="nav-link">Projects</Link>
-              <Link to="/ai" className="nav-link">AI build</Link>
               <Link to="#contact" className="nav-link" onClick={() => {
                 handleLinkClick();
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -164,7 +162,6 @@ function App() {
           <nav className="mobile-menu-links">
             <Link to="/#home" className="mobile-menu-link" onClick={handleLinkClick}>Home</Link>
             <Link to="/#work" className="mobile-menu-link" onClick={handleLinkClick}>Projects</Link>
-            <Link to="/ai" className="mobile-menu-link" onClick={handleLinkClick}>AI Builds</Link>
             <Link to="#contact" className="mobile-menu-link" onClick={() => {
               handleLinkClick();
               document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -183,7 +180,6 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/ai" element={<AIPage />} />
             <Route path="/project/:id" element={<ProjectCaseStudy />} />
           </Routes>
         </main>

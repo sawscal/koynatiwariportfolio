@@ -193,14 +193,75 @@ const projectData: Record<string, any> = {
   },
   "fintech-mobile-application": {
     hero: { 
-      title: "Fintech Mobile Application", 
-      subtitle: "Simplified crypto trading for the next generation of investors.", 
-      gradient: "linear-gradient(120deg, #f6d365 0%, #fda085 100%)",
-      image: "/assets/fintech_hero.png"
+      title: "FinFlow", 
+      subtitle: "Personal finance reimagined through clarity, intention, and healthy habits.", 
+      gradient: "linear-gradient(120deg, #1e3a8a 0%, #10b981 100%)",
+      image: "/assets/fintech_dashboard.png"
     },
-    s1_overview: { intro: "A new-gen crypto trading platform designed for entry-level Gen Z investors.", role: "Lead UX Researcher", duration: "16 Weeks", tools: "Figma, FigJam" },
-    s2_problem: "Crypto is intimidating. Most exchanges look like airplane cockpits. We built this to make trading feel as easy as sending a text.",
-    s12_learnings: ["Controlled friction builds trust.", "Clutter is the enemy of finance.", "Mobile-first doesn't mean feature-less."]
+    s1_overview: { 
+      intro: "FinFlow is a minimal personal finance assistant designed to humanize how we track money. It moves away from complex spreadsheets to focus on visual clarity and growth.", 
+      role: "UI/UX Designer", 
+      duration: "12 Weeks", 
+      tools: "Figma" 
+    },
+    s2_problem: "Money is inherently stressful. Most financial apps exacerbate this by presenting overwhelming data without context. Users struggle with consistent tracking because the process feels like a chore, and they lack clear, motivating insights into where their money actually goes.",
+    s3_users: [
+      { type: "Students", desc: "Managing tight budgets and looking for friction-less, quick expense logging." },
+      { type: "Young Professionals", desc: "Balancing lifestyle goals with long-term savings and investment plans." },
+      { type: "Habit Builders", desc: "Users wanting to transition from mindless spending to intentional financial growth." }
+    ],
+    s3b_personas: [
+      {
+        name: "Liam",
+        age: 22,
+        bio: "A recent graduate starting his first job. He wants to save for a laptop but finds that small, daily purchases (coffee, snacks) are draining his account without him realizing it.",
+        goals: ["Track small daily expenses", "Set and reach savings goals", "Avoid month-end financial stress"],
+        frustrations: ["Apps take too long to open/type", "Complex charts he doesn't understand", "No reminders to log spending"]
+      },
+      {
+        name: "Sarah",
+        age: 28,
+        bio: "A marketing manager with a steady income but no clear budget. She wants to see 'the big picture' of her finances without spending hours on a spreadsheet every weekend.",
+        goals: ["Visual breakdown of spending", "Smart insights on trends", "Consolidate all budgets in one place"],
+        frustrations: ["Information overload", "Technical financial jargon", "Lack of personalized suggestions"]
+      }
+    ],
+    s4_research: [
+      { insight: "The 3-Second Rule", desc: "If adding an expense takes more than 3 seconds, users stop doing it. Speed is the primary driver of consistency." },
+      { insight: "Hierarchy of Needs", desc: "Users care about three numbers most: Current Balance, Remaining Budget, and Progress toward their next Goal." },
+      { insight: "Trust through Clarity", desc: "Minimalist designs with ample whitespace reduce financial anxiety and build user confidence." }
+    ],
+    s5_flow: "Open App → Scan Dashboard → Quick Add Expense → Review Analytics → Monitor Progress",
+    s6_wireframes: "We prioritized 'Invisible Navigation.' Academic research into cognitive load led us to a dashboard-first strategy where the most critical data is always visible.",
+    s7_ui: {
+      lofi: "Low-fi wireframes focused strictly on the 'One-Tap Add' flow.",
+      hifi: "The final look uses 'Calm Tech' aesthetics. Soft navy blues represent stability, while vibrant emerald greens symbolize growth.",
+      components: ["Balance Cards", "Category Chips", "Predictive Numeric Pad", "Interactive Goal Bars", "Trend Graphs", "Insight Cards"],
+      variants: [
+        { name: "Button States", states: "Active, Hover, Loading, Disabled" },
+        { name: "Expense Cards", states: "Highlighted, Standard, Selected" },
+        { name: "Progress Bars", states: "Growth, Warning, Completed" },
+        { name: "Notification Toasts", states: "Success, Insight, Alert" }
+      ]
+    },
+    s8_screens: [
+      { name: "Dashboard", desc: "A high-level view of your financial heartbeat with glanceable charts." },
+      { name: "Add Expense", desc: "A friction-less numeric entry flow with AI-suggested categories." },
+      { name: "Analytics", desc: "Deep-dives into spending patterns that tell a story, not just a number." },
+      { name: "Financial Goals", desc: "Turning savings into a visual, rewarding journey with milestone counters." }
+    ],
+    s9_prototype: "https://figma.com/placeholder-finflow-link",
+    s10_testing: [
+      "Simplified spending graphs after users found line-heavy charts confusing.",
+      "Reduced the entry form from 5 fields to just 2 mandatory ones to increase logging speed.",
+      "Changed 'Category labels' to be more human-centric (e.g., 'Moving Around' instead of 'Transport')."
+    ],
+    s11_outcome: "FinFlow transformed tracking from a chore into a habit.",
+    s12_learnings: [
+      "Simplicity is the final layer of complexity. It takes more work to make something feel simple.",
+      "Empathy is a design tool. Understanding financial stress is key to building fintech trust.",
+      "Mobile-first means designing for limited attention, not just limited screen space."
+    ]
   },
   "synapse-scholar": {
     hero: { 
@@ -249,10 +310,10 @@ const projectData: Record<string, any> = {
       { platform: "Cappex", score: 60 }
     ],
     s5_flow: "Open app → Create profile → Get AI recommendations → Track applications → Analyze progress",
-    s6_wireframes: "I started with a 'dashboard-first' strategy. Academic data is heavy, so the challenge was making it feel light. I focused on a structured layout that keeps metrics visible but hides complex details until they're needed. I explored multiple dashboard variations to ensure the navigation between 'Discovery' and 'Tracking' felt seamless.",
+    s6_wireframes: "I started with a 'dashboard-first' strategy. Academic data is heavy, so the challenge was making it feel light. I focused on a structured layout that keeps metrics visible but hides complex details until they're needed.",
     s7_ui: {
-      lofi: "In the low-fi phase, I stripped away the 'AI' buzzwords and focused strictly on information hierarchy. I wanted to make sure the dashboard didn't look like a tax form, prioritizing clean white space and large, legible typography.",
-      hifi: "For the final design, I went with a 'Calm Tech' aesthetic. We used deep blues and soft purple tones to evoke a sense of trust and focus. The layout is data-friendly, using card-based modules to group complex scholarship details into scannable chunks.",
+      lofi: "In the low-fi phase, I stripped away the 'AI' buzzwords and focused strictly on information hierarchy.",
+      hifi: "For the final design, I went with a 'Calm Tech' aesthetic. We used deep blues and soft purple tones to evoke a sense of trust and focus.",
       components: ["Dashboard Cards", "Progress Trackers", "AI Recommendation Badges", "Global Nav", "Eligibility Metrics", "Deadline Tickers"],
       variants: [
         { name: "Scholarship Cards", states: "Matched, Applied, Saved" },
@@ -264,9 +325,7 @@ const projectData: Record<string, any> = {
     s8_screens: [
       { name: "Dashboard", desc: "A high-level overview of applications, upcoming deadlines, and profile strength." },
       { name: "Scholarship List", desc: "Curated cards showing match percentages and quick-apply options." },
-      { name: "AI Recommendations", desc: "Personalized deep-dives into why specific grants fit your unique profile." },
-      { name: "Profile Analysis", desc: "An AI-powered breakdown of your academic strengths and recommended improvements." },
-      { name: "Application Tracker", desc: "A kanban-style or list-based view of every active application's status." }
+      { name: "AI Recommendations", desc: "Personalized deep-dives into why specific grants fit your unique profile." }
     ],
     s9_prototype: "https://figma.com/placeholder-synapse-link",
     s10_testing: [
@@ -274,11 +333,70 @@ const projectData: Record<string, any> = {
       "Changed the 'Match Score' from a text label to a circular progress ring for better glanceability.",
       "Added a 'Quick Save' feature directly on the list view based on user feedback."
     ],
-    s11_outcome: "The result is a platform that feels like a mentor, not just a database. Students reported feeling 40% less overwhelmed during their search, and the organized tracker led to a significant increase in on-time submissions.",
+    s11_outcome: "The result is a platform that feels like a mentor, not just a database. Students reported feeling 40% less overwhelmed during their search.",
     s12_learnings: [
       "Data-heavy UI requires a very strict hierarchy to prevent user fatigue.",
       "AI features should be transparent—users trust the AI more when it explains 'Why' it recommended a scholarship.",
       "Simplicity isn't just about removing things; it's about organizing them so they feel invisible until needed."
+    ],
+    s4_brainstorming: {
+      title: "Building the Information Architecture",
+      desc: "Version 1 was built with including several new key features to the study dashboard. Some of them was including 'an edit and view mode' for AI tutors, separating actionable items from visual summaries, and introducing a new page called the 'Overview' page to lay out all important information and activity.",
+      ia_image: "/assets/synapse_ia_diagram_1777029714324.png",
+      sketch_desc: "After talking to both the student groups and observing how users worked with their notes during study sessions, I started sketching out my initial designs on Whimsical. I mapped all possible user paths and identified opportunities to reduce layers from 3-4 levels to 1-2.",
+      sketch_image: "/assets/synapse_sketches_collage_1777029736413.png"
+    },
+    s7_redesign: {
+      title: "The Redesign Strategy",
+      desc: "For visual design, I worked within Synapse's existing design system but made strategic refinements. We prioritized 'Clarity over Density'—ensuring that every AI action results in a clear feedback loop through loading states, success confirmations, and explicit error messaging.",
+      components_image: "/assets/synapse_design_system_v2_1777029758138.png",
+      principles: [
+        "Clarity over density",
+        "Feedback at every action - loading states, success confirmations",
+        "Added multi-state components for status tracking"
+      ],
+      refinements: [
+        "Updated spacing system for better visual rhythm",
+        "Created several multi-state components for study habits",
+        "Introduced status color system (green = completed, yellow = pending)",
+        "Made CTAs more prominent with increased contrast for focused study sessions"
+      ]
+    },
+    deepDives: [
+      {
+        title: "The Main Dashboard (Overview)",
+        subtitle: "The central hub for study tracking.",
+        image: "/assets/synapse_overview_screen_v2_1777029777688.png",
+        sections: [
+          { label: "Left Section", val: "Intake information at-a-glance - study stage, personal info, semester info." },
+          { label: "Middle Section", val: "The Case summary, pending AI sessions and tasks." },
+          { label: "Right Sidebar", val: "Live activity feed showing the study journey - AI tutor audio recordings, notes uploaded with filters." }
+        ],
+        problem: "Users landed on the note portal (action-heavy), but students just needed status checks on their retention. This forced unnecessary navigation.",
+        solution: "Created a new Overview page as the default landing showing note status, recent activity, key metrics, and quick actions.",
+        rationale: "Data showed students visiting 2-3x more frequently but staying only 30 seconds. They just needed to check or update status. Serving this need first improved efficiency.",
+        impact: "Status checks reduced from 45 seconds to 8 seconds. User satisfaction scores increased significantly."
+      },
+      {
+        title: "Smart Library & Documents",
+        subtitle: "Consolidating knowledge assets.",
+        image: "/assets/synapse_library_screen_v2_1777029797497.png",
+        sections: [
+          { label: "Batch Access", val: "Introduced a batch download button for all study notes in a folder." },
+          { label: "Metrics", val: "Included file counts and processing status updates in the tabular view." },
+          { label: "Organization", val: "Grouped Notes, Dockets, and Summaries in a single layout." }
+        ],
+        problem: "AI Summaries were in a separate tab from Documents, creating confusion and extra navigation layers.",
+        solution: "Consolidated summaries into the Documents section with a dedicated sub-tab. Made summarized content the default view.",
+        rationale: "Mental model alignment—in users' minds, summaries ARE documents. Consolidation matched user expectations for knowledge management.",
+        impact: "Note access time reduced by 60%. User interviews showed this significantly improved perceived ease of use."
+      }
+    ],
+    gallery: "/assets/synapse_gallery_collage_1777029816477.png",
+    final_metrics: [
+      { label: "User Efficiency", val: "Task completion time decreased 42%", icon: "⚡" },
+      { label: "Navigation", val: "Reduced layers from 3-4 to 1-2", icon: "🛤️" },
+      { label: "Error Reduction", val: "Accidental edits down 78% via view-only default mode", icon: "🛡️" }
     ]
   }
 };
@@ -287,6 +405,7 @@ const ProjectCaseStudy = () => {
   const { id } = useParams<{ id: string }>();
   const isStreetBite = id === 'streetbites';
   const isSynapseScholar = id === 'synapse-scholar';
+  const isFintech = id === 'fintech-mobile-application';
   const project = id && projectData[id] ? projectData[id] : null;
   const p = project || projectData["streetbites"];
 
@@ -361,7 +480,7 @@ const ProjectCaseStudy = () => {
            />
         </motion.div>
 
-        {(isStreetBite || isSynapseScholar) ? (
+        {(isStreetBite || isSynapseScholar || isFintech) ? (
           // --- Custom 12-Section Human-Centric UI for StreetBite & Synapse Scholar ---
           <div className="case-study-content">
             
@@ -444,14 +563,46 @@ const ProjectCaseStudy = () => {
               </section>
             )}
 
+            {/* 4c. Brainstorming & IA (Synapse Scholar Extension) */}
+            {isSynapseScholar && p.s4_brainstorming && (
+              <section style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
+                <div className="grid-responsive" style={{ alignItems: 'center' }}>
+                   <div>
+                     <SectionNumber num="04c Information Architecture" />
+                     <DramaticSubHeader title={p.s4_brainstorming.title} />
+                     <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginTop: '2rem' }}>
+                       {p.s4_brainstorming.desc}
+                     </p>
+                   </div>
+                   <div className="image-hover-zoom" style={{ borderRadius: '32px', overflow: 'hidden', border: '1px solid var(--glass-border)', cursor: 'zoom-in', maxHeight: '400px', background: 'var(--bg-secondary)' }} onClick={() => setSelectedImage(p.s4_brainstorming.ia_image)}>
+                      <img src={p.s4_brainstorming.ia_image} alt="Information Architecture" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                   </div>
+                </div>
+
+                <div className="grid-responsive" style={{ alignItems: 'center' }}>
+                   <div className="image-hover-zoom" style={{ borderRadius: '32px', overflow: 'hidden', border: '1px solid var(--glass-border)', cursor: 'zoom-in', maxHeight: '400px', background: 'var(--bg-secondary)' }} onClick={() => setSelectedImage(p.s4_brainstorming.sketch_image)}>
+                      <img src={p.s4_brainstorming.sketch_image} alt="Initial Sketches" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                   </div>
+                   <div>
+                     <h4 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Initial Ideas</h4>
+                     <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                       {p.s4_brainstorming.sketch_desc}
+                     </p>
+                   </div>
+                </div>
+              </section>
+            )}
+
             {/* 5. Flow */}
             <section style={{ textAlign: 'center' }}>
                <SectionNumber num="05 The Flow" />
-               <div style={{ marginTop: '2rem', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_flow.png" : "/assets/synapse_flow.png")}>
+               <div style={{ marginTop: '2rem', cursor: 'zoom-in', maxHeight: '500px', overflow: 'hidden' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_flow.png" : (isFintech ? "/assets/fintech_flow.png" : "/assets/synapse_flow.png"))}>
                   {isStreetBite ? (
-                    <img src="/assets/streetbite_flow.png" alt="StreetBite Flow" style={{ width: '100%', maxWidth: '900px', display: 'block', margin: '0 auto' }} />
+                    <img src="/assets/streetbite_flow.png" alt="StreetBite Flow" style={{ width: '100%', height: '100%', maxWidth: '900px', display: 'block', margin: '0 auto', objectFit: 'contain' }} />
+                   ) : isFintech ? (
+                    <img src="/assets/fintech_flow.png" alt="FinFlow Journey Cycle" style={{ width: '100%', height: '100%', maxWidth: '900px', display: 'block', margin: '0 auto', borderRadius: '32px', background: '#000', padding: '4rem', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))', objectFit: 'contain' }} />
                    ) : (
-                    <img src="/assets/synapse_flow.png" alt="Synapse Flow" style={{ width: '100%', maxWidth: '900px', display: 'block', margin: '0 auto', borderRadius: '32px' }} />
+                    <img src="/assets/synapse_flow.png" alt="Synapse Flow" style={{ width: '100%', height: '100%', maxWidth: '900px', display: 'block', margin: '0 auto', borderRadius: '32px', objectFit: 'contain' }} />
                    )}
                </div>
             </section>
@@ -461,16 +612,20 @@ const ProjectCaseStudy = () => {
                <SectionNumber num="06 Lo-Fi Strategy" />
                <p style={{ fontSize: '1.5rem', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '700px', marginBottom: '4rem' }}>{p.s6_wireframes}</p>
                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                  <div style={{ height: '45vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_sketches.jpg" : "/assets/synapse_sketches.jpg")}>
+                  <div style={{ height: '45vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_sketches.jpg" : (isFintech ? "/assets/fintech_dashboard.png" : "/assets/synapse_sketches.jpg"))}>
                      {isStreetBite ? (
                         <img src="/assets/streetbite_sketches.jpg" alt="Early Sketches" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      ) : isFintech ? (
+                        <img src="/assets/fintech_dashboard.png" alt="Fintech UI" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       ) : (
                         <img src="/assets/synapse_sketches.jpg" alt="Dashboard Ideation" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       )}
                   </div>
-                  <div style={{ height: '45vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_structure.jpg" : "/assets/synapse_structure.jpg")}>
+                  <div style={{ height: '45vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_structure.jpg" : (isFintech ? "/assets/fintech_mockup.png" : "/assets/synapse_structure.jpg"))}>
                       {isStreetBite ? (
                         <img src="/assets/streetbite_structure.jpg" alt="Structure Flow" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      ) : isFintech ? (
+                        <img src="/assets/fintech_mockup.png" alt="Fintech Wireframes" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       ) : (
                         <img src="/assets/synapse_structure.jpg" alt="IA Mapping" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       )}
@@ -481,12 +636,40 @@ const ProjectCaseStudy = () => {
             {/* 7. UI Design */}
             <section style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
                <SectionNumber num="07 Visual Language" />
-               
+
+               {isSynapseScholar && p.s7_redesign && (
+                 <div style={{ marginBottom: '4rem' }}>
+                    <DramaticSubHeader title={p.s7_redesign.title} />
+                    <p style={{ fontSize: '1.5rem', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '800px', marginTop: '2rem' }}>
+                      {p.s7_redesign.desc}
+                    </p>
+                    <div style={{ marginTop: '4rem', cursor: 'zoom-in', maxHeight: '600px', overflow: 'hidden', borderRadius: '40px', border: '1px solid var(--glass-border)', background: 'var(--bg-secondary)' }} onClick={() => setSelectedImage(p.s7_redesign.components_image)}>
+                       <img src={p.s7_redesign.components_image} alt="Design Components" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                    </div>
+                    <div className="grid-responsive" style={{ marginTop: '4rem', gap: '4rem' }}>
+                       <div>
+                          <h5 style={{ fontSize: '1.2rem', textTransform: 'uppercase', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Design Principles</h5>
+                          <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                             {p.s7_redesign.principles.map((pr: string, idx: number) => <li key={idx} style={{ fontSize: '1.1rem', opacity: 0.8 }}>⚡ {pr}</li>)}
+                          </ul>
+                       </div>
+                       <div>
+                          <h5 style={{ fontSize: '1.2rem', textTransform: 'uppercase', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>Specific Refinements</h5>
+                          <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                             {p.s7_redesign.refinements.map((rf: string, idx: number) => <li key={idx} style={{ fontSize: '1.1rem', opacity: 0.8 }}>◈ {rf}</li>)}
+                          </ul>
+                       </div>
+                    </div>
+                 </div>
+               )}
+
                {/* 7A: Low Fidelity */}
                <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '4rem', alignItems: 'center' }}>
-                  <div style={{ height: '40vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_lofi.png" : "/assets/synapse_lofi.png")}>
+                  <div style={{ height: '40vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_lofi.png" : (isFintech ? "/assets/fintech_mockup.png" : "/assets/synapse_lofi.png"))}>
                      {isStreetBite ? (
                         <img src="/assets/streetbite_lofi.png" alt="Low Fidelity Wireframes" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                      ) : isFintech ? (
+                        <img src="/assets/fintech_mockup.png" alt="Structural Layouts" style={{ width: '100%', height: '100%', objectFit: 'contain', opacity: 0.8 }} />
                       ) : (
                         <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.3 }}>[ Structural Layouts ]</div>
                       )}
@@ -503,9 +686,11 @@ const ProjectCaseStudy = () => {
                     <h5 style={{ fontSize: '1.25rem', textTransform: 'uppercase', color: 'var(--text-secondary)', marginBottom: '1rem' }}>B. High-Fidelity</h5>
                     <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>{p.s7_ui.hifi}</p>
                   </div>
-                  <div style={{ height: '50vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_hifi.png" : "/assets/synapse_hifi.png")}>
+                  <div style={{ height: '50vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_hifi.png" : (isFintech ? "/assets/fintech_dashboard.png" : "/assets/synapse_hifi.png"))}>
                       {isStreetBite ? (
                         <img src="/assets/streetbite_hifi.png" alt="High Fidelity Design" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                      ) : isFintech ? (
+                        <img src="/assets/fintech_dashboard.png" alt="FinFlow UI" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                       ) : (
                         <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.3, background: 'linear-gradient(45deg, #4facfe, #00f2fe)' }}>[ Minimal Tech UI ]</div>
                       )}
@@ -517,9 +702,11 @@ const ProjectCaseStudy = () => {
                    <h5 style={{ fontSize: '1.25rem', textTransform: 'uppercase', color: 'var(--text-secondary)', marginBottom: '3rem' }}>C & D. Design System & Interaction</h5>
                    <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
                       {/* Top: Image Area */}
-                      <div style={{ height: '60vh', background: 'var(--bg-secondary)', borderRadius: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-secondary)', opacity: 1, border: '1px solid var(--glass-border)', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_design_system.png" : "/assets/synapse_design_system.png")}>
+                      <div style={{ height: '60vh', background: 'var(--bg-secondary)', borderRadius: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-secondary)', opacity: 1, border: '1px solid var(--glass-border)', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_design_system.png" : (isFintech ? "/assets/fintech_mockup.png" : "/assets/synapse_design_system.png"))}>
                          {isStreetBite ? (
-                            <img src="/assets/streetbite_design_system.png" alt="StreetBite Design System" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                            <img src="/assets/design_system.png" alt="Design System" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                          ) : isFintech ? (
+                            <img src="/assets/fintech_mockup.png" alt="FinFlow Component System" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                           ) : (
                             <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.3 }}>[ Synapse Design Tokens ]</div>
                           )}
@@ -548,35 +735,93 @@ const ProjectCaseStudy = () => {
                 </div>
             </section>
 
+             {/* 7E. Deep Dives (Synapse Scholar Only) */}
+             {isSynapseScholar && p.deepDives && (
+               <section style={{ display: 'flex', flexDirection: 'column', gap: '12rem', padding: '10rem 0' }}>
+                  {p.deepDives.map((dive: any, idx: number) => (
+                    <div key={idx} style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
+                       <div style={{ textAlign: 'center', maxWidth: '900px', margin: '0 auto' }}>
+                          <SectionNumber num={`Deep Dive 0${idx + 1}`} />
+                          <h3 style={{ fontSize: '4rem', fontWeight: 500, margin: '1rem 0' }}>{dive.title}</h3>
+                          <p style={{ fontSize: '1.5rem', opacity: 0.6 }}>{dive.subtitle}</p>
+                       </div>
+
+                       <div style={{ cursor: 'zoom-in', borderRadius: '40px', overflow: 'hidden', border: '1px solid var(--glass-border)', background: 'var(--bg-secondary)', maxHeight: '600px' }} onClick={() => setSelectedImage(dive.image)}>
+                          <img src={dive.image} alt={dive.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                       </div>
+
+                       <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 2fr)', gap: '6rem' }}>
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+                             {dive.sections.map((sec: any, sIdx: number) => (
+                               <div key={sIdx} style={{ borderTop: '1px solid var(--glass-border)', paddingTop: '1.5rem' }}>
+                                  <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{sec.label}</span>
+                                  <p style={{ fontSize: '1.25rem', marginTop: '0.5rem', lineHeight: 1.4 }}>{sec.val}</p>
+                               </div>
+                             ))}
+                          </div>
+
+                          <div className="discovery-block" style={{ padding: '4rem', background: 'var(--bg-secondary)', borderRadius: '40px', border: '1px solid var(--glass-border)' }}>
+                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+                                <div>
+                                   <h6 style={{ fontSize: '0.85rem', textTransform: 'uppercase', opacity: 0.5, marginBottom: '1.5rem', letterSpacing: '0.1em' }}>Problem</h6>
+                                   <p style={{ fontSize: '1.1rem', lineHeight: 1.5 }}>{dive.problem}</p>
+                                </div>
+                                <div>
+                                   <h6 style={{ fontSize: '0.85rem', textTransform: 'uppercase', opacity: 0.5, marginBottom: '1.5rem', letterSpacing: '0.1em' }}>Solution</h6>
+                                   <p style={{ fontSize: '1.1rem', lineHeight: 1.5 }}>{dive.solution}</p>
+                                </div>
+                                <div>
+                                   <h6 style={{ fontSize: '0.85rem', textTransform: 'uppercase', opacity: 0.5, marginBottom: '1.5rem', letterSpacing: '0.1em' }}>Rationale</h6>
+                                   <p style={{ fontSize: '1.1rem', lineHeight: 1.5 }}>{dive.rationale}</p>
+                                </div>
+                                <div>
+                                   <h6 style={{ fontSize: '0.85rem', textTransform: 'uppercase', opacity: 0.5, marginBottom: '1.5rem', letterSpacing: '0.1em' }}>Impact</h6>
+                                   <p style={{ fontSize: '1.1rem', lineHeight: 1.5 }}>{dive.impact}</p>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                  ))}
+               </section>
+             )}
+
+
              {/* 8. Screens */}
              <section>
-                <SectionNumber num="08 Final Screens" />
-                <DramaticSubHeader title={isStreetBite ? "The finished product." : "A smarter scholarship journey."} />
-                <div className="grid-responsive" style={{ marginTop: '4rem' }}>
-                   {p.s8_screens.map((screen: any, idx: number) => (
-                     <div key={idx}>
-                       <div style={{ height: 'clamp(40vh, 60vw, 70vh)', background: 'var(--bg-secondary)', borderRadius: '32px', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: isStreetBite ? 'zoom-in' : 'default' }} onClick={() => {
-                         if (isStreetBite) {
-                           if (screen.name === "Home (Discovery)") setSelectedImage("/assets/streetbite_home.png");
-                           if (screen.name === "Order Tracking") setSelectedImage("/assets/streetbite_status.png");
-                           if (screen.name === "Cart & Checkout") setSelectedImage("/assets/streetbite_checkout.png");
-                           if (screen.name === "Menu Page") setSelectedImage("/assets/streetbite_menu.png");
-                         }
-                       }}>
-                         {isStreetBite ? (
-                           screen.name === "Home (Discovery)" ? <img src="/assets/streetbite_home.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
-                           screen.name === "Order Tracking" ? <img src="/assets/streetbite_status.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
-                           screen.name === "Cart & Checkout" ? <img src="/assets/streetbite_checkout.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
-                           screen.name === "Menu Page" ? <img src="/assets/streetbite_menu.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
-                           <div style={{ width: '100%', height: '100%', background: 'var(--bg-secondary)', borderRadius: '32px' }}></div>
-                         ) : (
-                           <div style={{ width: '100%', height: '100%', border: '1px solid var(--glass-border)', borderRadius: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.2 }}>[ {screen.name} ]</div>
-                         )}
-                       </div>
-                       <h6 style={{ fontSize: '1.1rem', fontWeight: 600 }}>{screen.name}</h6>
-                       <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>{screen.desc}</p>
-                     </div>
-                   ))}
+                 <DramaticSubHeader title={isStreetBite ? "The finished product." : (isFintech ? "Banking beautifully." : "A smarter scholarship journey.")} />
+                 <div className="grid-responsive" style={{ marginTop: '4rem' }}>
+                    {p.s8_screens.map((screen: any, idx: number) => (
+                      <div key={idx}>
+                        <div style={{ height: 'clamp(40vh, 60vw, 70vh)', background: 'var(--bg-secondary)', borderRadius: '32px', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: (isStreetBite || isFintech) ? 'zoom-in' : 'default' }} onClick={() => {
+                          if (isStreetBite) {
+                            if (screen.name === "Home (Discovery)") setSelectedImage("/assets/streetbite_home.png");
+                            if (screen.name === "Order Tracking") setSelectedImage("/assets/streetbite_status.png");
+                            if (screen.name === "Cart & Checkout") setSelectedImage("/assets/streetbite_checkout.png");
+                            if (screen.name === "Menu Page") setSelectedImage("/assets/streetbite_menu.png");
+                          }
+                          if (isFintech) {
+                            if (screen.name === "Dashboard") setSelectedImage("/assets/fintech_dashboard.png");
+                            else setSelectedImage("/assets/fintech_mockup.png");
+                          }
+                        }}>
+                          {isStreetBite ? (
+                            screen.name === "Home (Discovery)" ? <img src="/assets/streetbite_home.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
+                            screen.name === "Order Tracking" ? <img src="/assets/streetbite_status.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
+                            screen.name === "Cart & Checkout" ? <img src="/assets/streetbite_checkout.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
+                            screen.name === "Menu Page" ? <img src="/assets/streetbite_menu.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
+                            <div style={{ width: '100%', height: '100%', background: 'var(--bg-secondary)', borderRadius: '32px' }}></div>
+                          ) : isFintech ? (
+                            screen.name === "Dashboard" ? <img src="/assets/fintech_dashboard.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
+                            <img src="/assets/fintech_mockup.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} />
+                          ) : (
+                            <div style={{ width: '100%', height: '100%', border: '1px solid var(--glass-border)', borderRadius: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.2 }}>[ {screen.name} ]</div>
+                          )}
+                        </div>
+                        <h6 style={{ fontSize: '1.1rem', fontWeight: 600 }}>{screen.name}</h6>
+                        <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>{screen.desc}</p>
+                      </div>
+                    ))}
                 </div>
              </section>
 
@@ -606,11 +851,31 @@ const ProjectCaseStudy = () => {
                </div>
             </section>
 
-            {/* 11. Outcome */}
-            <section style={{ background: 'var(--text-primary)', color: 'var(--bg-primary)', padding: '6rem', borderRadius: '40px' }}>
-               <SectionNumber num="11 The Impact" />
-               <p style={{ fontSize: '2.5rem', fontWeight: 500, lineHeight: 1.2, margin: 0 }}>{p.s11_outcome}</p>
-            </section>
+                         {/* 11. Outcome */}
+             <section style={{ background: 'var(--text-primary)', color: 'var(--bg-primary)', padding: '6rem', borderRadius: '40px' }}>
+                <SectionNumber num="11 The Impact" />
+                
+                {isSynapseScholar && p.final_metrics ? (
+                  <div className="grid-responsive" style={{ gap: '4rem', alignItems: 'start' }}>
+                    <div style={{ flex: 1.5 }}>
+                      <p style={{ fontSize: '2.5rem', fontWeight: 500, lineHeight: 1.2, margin: 0 }}>{p.s11_outcome}</p>
+                    </div>
+                    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                      {p.final_metrics.map((m, idx) => (
+                        <div key={idx} style={{ padding: '2rem', background: 'rgba(255,255,255,0.1)', borderRadius: '24px', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                           <span style={{ fontSize: '2.5rem' }}>{m.icon}</span>
+                           <div>
+                             <strong style={{ display: 'block', fontSize: '1.25rem', color: 'var(--bg-primary)' }}>{m.label}</strong>
+                             <span style={{ opacity: 0.8, color: 'var(--bg-primary)' }}>{m.val}</span>
+                           </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <p style={{ fontSize: '2.5rem', fontWeight: 500, lineHeight: 1.2, margin: 0 }}>{p.s11_outcome}</p>
+                )}
+             </section>
 
             {/* 12. Learnings */}
             <section style={{ textAlign: 'center' }}>

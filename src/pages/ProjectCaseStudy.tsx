@@ -861,7 +861,7 @@ const ProjectCaseStudy = () => {
                       <p style={{ fontSize: '2.5rem', fontWeight: 500, lineHeight: 1.2, margin: 0 }}>{p.s11_outcome}</p>
                     </div>
                     <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-                      {p.final_metrics.map((m, idx) => (
+                      {p.final_metrics.map((m: any, idx: number) => (
                         <div key={idx} style={{ padding: '2rem', background: 'rgba(255,255,255,0.1)', borderRadius: '24px', display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
                            <span style={{ fontSize: '2.5rem' }}>{m.icon}</span>
                            <div>

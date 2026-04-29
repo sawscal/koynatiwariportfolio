@@ -178,7 +178,7 @@ const projectData: Record<string, any> = {
       { name: "Cart & Checkout", desc: "A streamlined, friction-less flow optimized for quick transactions on the go." },
       { name: "Order Tracking", desc: "Real-time updates on your order status so you're never left guessing." }
     ],
-    s9_prototype: "https://figma.com/placeholder-streetbite-link",
+    s9_prototype: "https://www.figma.com/proto/A1L1NirQp1b5J0OgPJ3l3G/StreetBytes?node-id=93-520&p=f&t=JNHTRnggoovAVfrY-1&scaling=scale-down&content-scaling=fixed&page-id=46%3A33&starting-point-node-id=49%3A55",
     s10_testing: [
       "Navigation was simplified to 3 core tabs after users found the menu too crowded.",
       "Primary actions (like 'Order Now') were enlarged for better visibility in outdoor conditions.",
@@ -196,7 +196,7 @@ const projectData: Record<string, any> = {
       title: "FinFlow", 
       subtitle: "Personal finance reimagined through clarity, intention, and healthy habits.", 
       gradient: "linear-gradient(120deg, #1e3a8a 0%, #10b981 100%)",
-      image: "/assets/fintech_dashboard.png"
+      image: "/assets/fintech_hero_final.png"
     },
     s1_overview: { 
       intro: "FinFlow is a minimal personal finance assistant designed to humanize how we track money. It moves away from complex spreadsheets to focus on visual clarity and growth.", 
@@ -245,12 +245,12 @@ const projectData: Record<string, any> = {
       ]
     },
     s8_screens: [
-      { name: "Dashboard", desc: "A high-level view of your financial heartbeat with glanceable charts." },
-      { name: "Add Expense", desc: "A friction-less numeric entry flow with AI-suggested categories." },
-      { name: "Analytics", desc: "Deep-dives into spending patterns that tell a story, not just a number." },
+      { name: "Home", desc: "A high-level view of your financial heartbeat with the Money Vibe Check." },
+      { name: "Insights", desc: "Deep-dives into spending patterns that tell a story, not just a number." },
+      { name: "Analytics", desc: "Advanced trend analysis and predictive spending insights." },
       { name: "Financial Goals", desc: "Turning savings into a visual, rewarding journey with milestone counters." }
     ],
-    s9_prototype: "https://figma.com/placeholder-finflow-link",
+    s9_prototype: "https://www.figma.com/proto/D0BaP9osnzKNIB5JGHMEsR/Untitled?node-id=1-2&p=f&t=DsbKqKjEht3XmLhR-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1",
     s10_testing: [
       "Simplified spending graphs after users found line-heavy charts confusing.",
       "Reduced the entry form from 5 fields to just 2 mandatory ones to increase logging speed.",
@@ -596,15 +596,15 @@ const ProjectCaseStudy = () => {
             {/* 5. Flow */}
             <section style={{ textAlign: 'center' }}>
                <SectionNumber num="05 The Flow" />
-               <div style={{ marginTop: '2rem', cursor: 'zoom-in', maxHeight: '500px', overflow: 'hidden' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_flow.png" : (isFintech ? "/assets/fintech_flow.png" : "/assets/synapse_flow.png"))}>
-                  {isStreetBite ? (
-                    <img src="/assets/streetbite_flow.png" alt="StreetBite Flow" style={{ width: '100%', height: '100%', maxWidth: '900px', display: 'block', margin: '0 auto', objectFit: 'contain' }} />
-                   ) : isFintech ? (
-                    <img src="/assets/fintech_flow.png" alt="FinFlow Journey Cycle" style={{ width: '100%', height: '100%', maxWidth: '900px', display: 'block', margin: '0 auto', borderRadius: '32px', background: '#000', padding: '4rem', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))', objectFit: 'contain' }} />
-                   ) : (
-                    <img src="/assets/synapse_flow.png" alt="Synapse Flow" style={{ width: '100%', height: '100%', maxWidth: '900px', display: 'block', margin: '0 auto', borderRadius: '32px', objectFit: 'contain' }} />
-                   )}
-               </div>
+                <div style={{ marginTop: '4rem', cursor: 'zoom-in', minHeight: '50vh', background: 'var(--bg-secondary)', borderRadius: '48px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--glass-border)', padding: '2rem' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_flow.png" : (isFintech ? "/assets/fintech_architecture_flow.png" : "/assets/synapse_flow.png"))}>
+                   {isStreetBite ? (
+                     <img src="/assets/streetbite_flow.png" alt="StreetBite Flow" style={{ width: '100%', height: '100%', maxWidth: '1000px', objectFit: 'contain' }} />
+                    ) : isFintech ? (
+                     <img src="/assets/fintech_architecture_flow.png" alt="FinFlow Architecture & Flow" style={{ width: '100%', height: '100%', maxWidth: '1000px', objectFit: 'contain' }} />
+                    ) : (
+                     <img src="/assets/synapse_flow.png" alt="Synapse Flow" style={{ width: '100%', height: '100%', maxWidth: '1000px', objectFit: 'contain' }} />
+                    )}
+                </div>
             </section>
 
             {/* 6. Wireframes */}
@@ -612,20 +612,20 @@ const ProjectCaseStudy = () => {
                <SectionNumber num="06 Lo-Fi Strategy" />
                <p style={{ fontSize: '1.5rem', color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '700px', marginBottom: '4rem' }}>{p.s6_wireframes}</p>
                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                  <div style={{ height: '45vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_sketches.jpg" : (isFintech ? "/assets/fintech_dashboard.png" : "/assets/synapse_sketches.jpg"))}>
+                  <div style={{ height: '45vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_sketches.jpg" : (isFintech ? "/assets/fintech_lofi_sketch.png" : "/assets/synapse_lofi_sketch.png"))}>
                      {isStreetBite ? (
                         <img src="/assets/streetbite_sketches.jpg" alt="Early Sketches" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       ) : isFintech ? (
-                        <img src="/assets/fintech_dashboard.png" alt="Fintech UI" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <img src="/assets/fintech_lofi_sketch.png" alt="Fintech UI" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       ) : (
-                        <img src="/assets/synapse_sketches.jpg" alt="Dashboard Ideation" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <img src="/assets/synapse_lofi_sketch.png" alt="Dashboard Ideation" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       )}
                   </div>
-                  <div style={{ height: '45vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_structure.jpg" : (isFintech ? "/assets/fintech_mockup.png" : "/assets/synapse_structure.jpg"))}>
+                  <div style={{ height: '45vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_structure.jpg" : (isFintech ? "/assets/fintech_architecture_flow.png" : "/assets/synapse_structure.jpg"))}>
                       {isStreetBite ? (
                         <img src="/assets/streetbite_structure.jpg" alt="Structure Flow" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       ) : isFintech ? (
-                        <img src="/assets/fintech_mockup.png" alt="Fintech Wireframes" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <img src="/assets/fintech_architecture_flow.png" alt="Fintech Architecture Flow" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       ) : (
                         <img src="/assets/synapse_structure.jpg" alt="IA Mapping" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                       )}
@@ -665,13 +665,13 @@ const ProjectCaseStudy = () => {
 
                {/* 7A: Low Fidelity */}
                <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '4rem', alignItems: 'center' }}>
-                  <div style={{ height: '40vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_lofi.png" : (isFintech ? "/assets/fintech_mockup.png" : "/assets/synapse_lofi.png"))}>
+                  <div style={{ height: '40vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_lofi.png" : (isFintech ? "/assets/fintech_lofi_sketch.png" : "/assets/synapse_lofi_sketch.png"))}>
                      {isStreetBite ? (
                         <img src="/assets/streetbite_lofi.png" alt="Low Fidelity Wireframes" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                       ) : isFintech ? (
-                        <img src="/assets/fintech_mockup.png" alt="Structural Layouts" style={{ width: '100%', height: '100%', objectFit: 'contain', opacity: 0.8 }} />
+                        <img src="/assets/fintech_lofi_sketch.png" alt="Structural Layouts" style={{ width: '100%', height: '100%', objectFit: 'contain', opacity: 0.8 }} />
                       ) : (
-                        <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.3 }}>[ Structural Layouts ]</div>
+                        <img src="/assets/synapse_lofi_sketch.png" alt="Structural Layouts" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                       )}
                   </div>
                   <div>
@@ -686,11 +686,11 @@ const ProjectCaseStudy = () => {
                     <h5 style={{ fontSize: '1.25rem', textTransform: 'uppercase', color: 'var(--text-secondary)', marginBottom: '1rem' }}>B. High-Fidelity</h5>
                     <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>{p.s7_ui.hifi}</p>
                   </div>
-                  <div style={{ height: '50vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_hifi.png" : (isFintech ? "/assets/fintech_dashboard.png" : "/assets/synapse_hifi.png"))}>
+                  <div style={{ height: '50vh', background: 'var(--bg-secondary)', borderRadius: '32px', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_hifi.png" : (isFintech ? "/assets/fintech_hifi_collage.png" : "/assets/synapse_hifi.png"))}>
                       {isStreetBite ? (
                         <img src="/assets/streetbite_hifi.png" alt="High Fidelity Design" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                       ) : isFintech ? (
-                        <img src="/assets/fintech_dashboard.png" alt="FinFlow UI" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                        <img src="/assets/fintech_hifi_collage.png" alt="FinFlow UI Collage" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                       ) : (
                         <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.3, background: 'linear-gradient(45deg, #4facfe, #00f2fe)' }}>[ Minimal Tech UI ]</div>
                       )}
@@ -702,11 +702,11 @@ const ProjectCaseStudy = () => {
                    <h5 style={{ fontSize: '1.25rem', textTransform: 'uppercase', color: 'var(--text-secondary)', marginBottom: '3rem' }}>C & D. Design System & Interaction</h5>
                    <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
                       {/* Top: Image Area */}
-                      <div style={{ height: '60vh', background: 'var(--bg-secondary)', borderRadius: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-secondary)', opacity: 1, border: '1px solid var(--glass-border)', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_design_system.png" : (isFintech ? "/assets/fintech_mockup.png" : "/assets/synapse_design_system.png"))}>
+                      <div style={{ height: '60vh', background: 'var(--bg-secondary)', borderRadius: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-secondary)', opacity: 1, border: '1px solid var(--glass-border)', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage(isStreetBite ? "/assets/streetbite_design_system.png" : (isFintech ? "/assets/fintech_design_system.png" : "/assets/synapse_design_system.png"))}>
                          {isStreetBite ? (
                             <img src="/assets/design_system.png" alt="Design System" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                           ) : isFintech ? (
-                            <img src="/assets/fintech_mockup.png" alt="FinFlow Component System" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                            <img src="/assets/fintech_design_system.png" alt="FinFlow Component System" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                           ) : (
                             <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.3 }}>[ Synapse Design Tokens ]</div>
                           )}
@@ -793,31 +793,43 @@ const ProjectCaseStudy = () => {
                  <div className="grid-responsive" style={{ marginTop: '4rem' }}>
                     {p.s8_screens.map((screen: any, idx: number) => (
                       <div key={idx}>
-                        <div style={{ height: 'clamp(40vh, 60vw, 70vh)', background: 'var(--bg-secondary)', borderRadius: '32px', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: (isStreetBite || isFintech) ? 'zoom-in' : 'default' }} onClick={() => {
-                          if (isStreetBite) {
-                            if (screen.name === "Home (Discovery)") setSelectedImage("/assets/streetbite_home.png");
-                            if (screen.name === "Order Tracking") setSelectedImage("/assets/streetbite_status.png");
-                            if (screen.name === "Cart & Checkout") setSelectedImage("/assets/streetbite_checkout.png");
-                            if (screen.name === "Menu Page") setSelectedImage("/assets/streetbite_menu.png");
-                          }
-                          if (isFintech) {
-                            if (screen.name === "Dashboard") setSelectedImage("/assets/fintech_dashboard.png");
-                            else setSelectedImage("/assets/fintech_mockup.png");
-                          }
-                        }}>
-                          {isStreetBite ? (
-                            screen.name === "Home (Discovery)" ? <img src="/assets/streetbite_home.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
-                            screen.name === "Order Tracking" ? <img src="/assets/streetbite_status.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
-                            screen.name === "Cart & Checkout" ? <img src="/assets/streetbite_checkout.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
-                            screen.name === "Menu Page" ? <img src="/assets/streetbite_menu.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
-                            <div style={{ width: '100%', height: '100%', background: 'var(--bg-secondary)', borderRadius: '32px' }}></div>
-                          ) : isFintech ? (
-                            screen.name === "Dashboard" ? <img src="/assets/fintech_dashboard.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
-                            <img src="/assets/fintech_mockup.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} />
-                          ) : (
-                            <div style={{ width: '100%', height: '100%', border: '1px solid var(--glass-border)', borderRadius: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.2 }}>[ {screen.name} ]</div>
-                          )}
-                        </div>
+                        <motion.div 
+                           whileHover={{ scale: 1.05, y: -10 }}
+                           whileTap={{ scale: 0.98 }}
+                           transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                           style={{ height: 'clamp(40vh, 60vw, 70vh)', background: 'var(--bg-secondary)', borderRadius: '32px', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: (isStreetBite || isFintech) ? 'zoom-in' : 'default', border: '1px solid var(--glass-border)', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} 
+                           onClick={() => {
+                             if (isStreetBite) {
+                               if (screen.name === "Home (Discovery)") setSelectedImage("/assets/streetbite_home.png");
+                               if (screen.name === "Order Tracking") setSelectedImage("/assets/streetbite_status.png");
+                               if (screen.name === "Cart & Checkout") setSelectedImage("/assets/streetbite_checkout.png");
+                               if (screen.name === "Menu Page") setSelectedImage("/assets/streetbite_menu.png");
+                             }
+                             if (isFintech) {
+                               if (screen.name === "Home") setSelectedImage("/assets/fintech_home_screen.png");
+                               else if (screen.name === "Insights") setSelectedImage("/assets/fintech_insights_screen.png");
+                               else if (screen.name === "Analytics") setSelectedImage("/assets/fintech_analytics_screen.png");
+                               else if (screen.name === "Financial Goals") setSelectedImage("/assets/fintech_goals_screen.png");
+                               else setSelectedImage("/assets/fintech_mockup.png");
+                             }
+                           }}
+                         >
+                           {isStreetBite ? (
+                             screen.name === "Home (Discovery)" ? <img src="/assets/streetbite_home.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
+                             screen.name === "Order Tracking" ? <img src="/assets/streetbite_status.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
+                             screen.name === "Cart & Checkout" ? <img src="/assets/streetbite_checkout.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
+                             screen.name === "Menu Page" ? <img src="/assets/streetbite_menu.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
+                             <div style={{ width: '100%', height: '100%', background: 'var(--bg-secondary)', borderRadius: '32px' }}></div>
+                           ) : isFintech ? (
+                             screen.name === "Home" ? <img src="/assets/fintech_home_screen.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
+                             screen.name === "Insights" ? <img src="/assets/fintech_insights_screen.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
+                             screen.name === "Analytics" ? <img src="/assets/fintech_analytics_screen.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
+                             screen.name === "Financial Goals" ? <img src="/assets/fintech_goals_screen.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} /> :
+                             <img src="/assets/fintech_mockup.png" alt={screen.name} style={{ maxHeight: '100%', maxWidth: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.4))' }} />
+                           ) : (
+                             <div style={{ width: '100%', height: '100%', border: '1px solid var(--glass-border)', borderRadius: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: 0.2 }}>[ {screen.name} ]</div>
+                           )}
+                        </motion.div>
                         <h6 style={{ fontSize: '1.1rem', fontWeight: 600 }}>{screen.name}</h6>
                         <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>{screen.desc}</p>
                       </div>

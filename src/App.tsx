@@ -117,6 +117,7 @@ function App() {
             <nav className="nav-links">
               <Link to="/#home" className="nav-link">About</Link>
               <Link to="/#work" className="nav-link">Projects</Link>
+              <a href="https://docs.google.com/document/d/16c8GaeFKaemOQHy1SSu6diKtG_4pfAJRp-tzYzjw5L8/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="nav-link">Resume</a>
               <Link to="#contact" className="nav-link" onClick={() => {
                 handleLinkClick();
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -162,6 +163,7 @@ function App() {
           <nav className="mobile-menu-links">
             <Link to="/#home" className="mobile-menu-link" onClick={handleLinkClick}>Home</Link>
             <Link to="/#work" className="mobile-menu-link" onClick={handleLinkClick}>Projects</Link>
+            <a href="https://docs.google.com/document/d/16c8GaeFKaemOQHy1SSu6diKtG_4pfAJRp-tzYzjw5L8/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="mobile-menu-link" onClick={handleLinkClick}>Resume</a>
             <Link to="#contact" className="mobile-menu-link" onClick={() => {
               handleLinkClick();
               document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -171,8 +173,8 @@ function App() {
           <div className="mobile-menu-footer">
             <p>koynatiwari2911@gmail.com</p>
             <div style={{ display: 'flex', gap: '1.5rem', marginTop: '1rem' }}>
-              <a href="#" className="nav-link" style={{ fontSize: '0.9rem' }}>Behance</a>
-              <a href="#" className="nav-link" style={{ fontSize: '0.9rem' }}>LinkedIn</a>
+              <a href="https://www.behance.net/koynatiwari" target="_blank" rel="noopener noreferrer" className="nav-link" style={{ fontSize: '0.9rem' }}>Behance</a>
+              <a href="https://www.linkedin.com/in/koyna-tiwari-5594352a3" target="_blank" rel="noopener noreferrer" className="nav-link" style={{ fontSize: '0.9rem' }}>LinkedIn</a>
             </div>
           </div>
         </div>
@@ -198,8 +200,8 @@ function App() {
 
             <div className="footer-swiss-grid">
               <div className="footer-socials">
-                <a href="#" className="footer-link">Behance ↗</a>
-                <a href="#" className="footer-link">LinkedIn ↗</a>
+                <a href="https://www.behance.net/koynatiwari" target="_blank" rel="noopener noreferrer" className="footer-link">Behance ↗</a>
+                <a href="https://www.linkedin.com/in/koyna-tiwari-5594352a3" target="_blank" rel="noopener noreferrer" className="footer-link">LinkedIn ↗</a>
                 <a href="#" className="footer-link">Dribbble ↗</a>
               </div>
 

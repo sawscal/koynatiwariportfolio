@@ -696,9 +696,9 @@ const SynapseScholarRedesign = ({ setSelectedImage }: { setSelectedImage: (url: 
          </section>
 
          {/* 15. FINAL PRESENTATION STYLE (Footer) */}
-         <section style={{ textAlign: 'center', borderTop: '1px solid var(--glass-border)', paddingBottom: '4rem', marginBottom: '4rem' }}>
+         <section style={{ textAlign: 'center', borderTop: '1px solid var(--glass-border)', paddingBottom: '4rem', marginBottom: '4rem', position: 'relative', zIndex: 50 }}>
             <h3 style={{ fontSize: '1.5rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '2rem' }}>End of Case Study</h3>
-            <Link to="/" style={{ display: 'inline-flex', padding: '1.2rem 3rem', background: 'var(--text-primary)', color: 'var(--bg-primary)', borderRadius: '99px', textDecoration: 'none', fontWeight: 600 }}>
+            <Link to="/" className="nav-link" onClick={() => window.scrollTo(0, 0)} style={{ display: 'inline-flex', padding: '1.2rem 3.5rem', background: 'var(--text-primary)', color: 'var(--bg-primary)', borderRadius: '99px', textDecoration: 'none', fontWeight: 600, fontSize: '1.2rem' }}>
                Return to Index
             </Link>
          </section>

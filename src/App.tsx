@@ -87,8 +87,14 @@ function App() {
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
-      const options: Intl.DateTimeFormatOptions = { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit', hour12: false };
-      setTime("Raipur • " + now.toLocaleTimeString('en-US', options));
+      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      let locationName = "Local";
+      if (timeZone) {
+        const parts = timeZone.split('/');
+        locationName = parts[parts.length - 1].replace(/_/g, ' ');
+      }
+      const options: Intl.DateTimeFormatOptions = { hour: '2-digit', minute: '2-digit', hour12: false };
+      setTime(locationName + " • " + now.toLocaleTimeString('en-US', options));
     };
     updateTime();
     const interval = setInterval(updateTime, 10000);

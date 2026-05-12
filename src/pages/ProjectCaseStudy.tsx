@@ -401,6 +401,320 @@ const projectData: Record<string, any> = {
   }
 };
 
+const SynapseScholarRedesign = ({ setSelectedImage }: { setSelectedImage: (url: string | null) => void }) => {
+  return (
+    <div className="synapse-premium-wrapper" style={{ minHeight: '100vh', width: '100vw', marginLeft: 'calc(-50vw + 50%)', overflowX: 'hidden' }}>
+       <div className="container" style={{ paddingBottom: '10rem', paddingTop: '4rem' }}>
+         <div style={{ marginBottom: '4rem' }}>
+            <Link to="/" className="nav-link" style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-secondary)' }}>
+              &larr; Return to Index
+            </Link>
+         </div>
+
+         {/* 1. HERO SECTION */}
+         <section className="hero-section" style={{ padding: '2rem 0 6rem 0', minHeight: '80vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div className="grid-responsive" style={{ alignItems: 'center', gap: '4rem' }}>
+               <div>
+                  <span className="synapse-section-badge">Case Study 2026</span>
+                  <h1 className="synapse-header-large">Synse Scholar</h1>
+                  <p className="synapse-body-large" style={{ fontSize: '1.5rem', marginBottom: '2rem', color: 'var(--accent-color)', fontWeight: 500 }}>
+                    AI-powered scholarship discovery and profile matching platform for students.
+                  </p>
+                  <p className="synapse-body-large" style={{ marginBottom: '3rem' }}>
+                    Students struggle to find relevant scholarships and manage application complexity. Synse Scholar uses AI-driven profile matching to simplify scholarship discovery, improve relevance, and streamline application tracking.
+                  </p>
+                  <div style={{ display: 'flex', gap: '3rem', borderTop: '1px solid var(--glass-border)', paddingTop: '2rem' }}>
+                     <div>
+                        <span style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '0.5rem', fontWeight: 600 }}>Role</span>
+                        <span style={{ fontWeight: 500 }}>Lead Product Designer</span>
+                     </div>
+                     <div>
+                        <span style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '0.5rem', fontWeight: 600 }}>Timeline</span>
+                        <span style={{ fontWeight: 500 }}>8 Weeks</span>
+                     </div>
+                     <div>
+                        <span style={{ display: 'block', fontSize: '0.85rem', textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: '0.5rem', fontWeight: 600 }}>Tools</span>
+                        <span style={{ fontWeight: 500 }}>Figma, FigJam</span>
+                     </div>
+                  </div>
+               </div>
+               <div className="image-hover-zoom" style={{ background: 'var(--bg-secondary)', borderRadius: '32px', border: '1px solid var(--glass-border)', overflow: 'hidden', height: '600px', cursor: 'zoom-in', boxShadow: '0 20px 40px rgba(0,0,0,0.05)' }} onClick={() => setSelectedImage("/assets/synapse_hero.png")}>
+                  <img src="/assets/synapse_hero.png" alt="Synse Scholar Dashboard" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+               </div>
+            </div>
+         </section>
+
+         {/* 2. PROBLEM STATEMENT */}
+         <section>
+            <span className="synapse-section-badge">01. The Problem</span>
+            <h2 className="synapse-header-large">The scholarship search is broken.</h2>
+            <p className="synapse-body-large" style={{ marginBottom: '4rem' }}>
+               Applying for scholarships usually feels like yelling into a void. Students drown in tabs, try to track deadlines in messy spreadsheets, and apply for grants they aren't even eligible for.
+            </p>
+            <div className="bento-grid">
+               <div className="bento-card col-span-4" style={{ background: 'var(--bg-secondary)' }}>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '1rem' }}>Irrelevant Matches</h3>
+                  <p style={{ color: 'var(--text-secondary)' }}>Platform algorithms prioritize volume over relevance, leading to decision fatigue.</p>
+               </div>
+               <div className="bento-card col-span-4" style={{ background: 'var(--bg-secondary)' }}>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '1rem' }}>Confusing Eligibility</h3>
+                  <p style={{ color: 'var(--text-secondary)' }}>Complex legal jargon makes it hard for students to know if they actually qualify.</p>
+               </div>
+               <div className="bento-card col-span-4" style={{ background: 'var(--bg-secondary)' }}>
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '1rem' }}>Missed Deadlines</h3>
+                  <p style={{ color: 'var(--text-secondary)' }}>Fragmented tracking across notes and spreadsheets leads to dropped applications.</p>
+               </div>
+            </div>
+         </section>
+
+         {/* 3. USER RESEARCH */}
+         <section>
+            <span className="synapse-section-badge">02. User Research</span>
+            <h2 className="synapse-header-large">Understanding student anxiety.</h2>
+            <div className="grid-responsive" style={{ marginTop: '4rem', gap: '2rem' }}>
+               <div className="sticky-note">
+                  "I have 15 tabs open right now just for one scholarship. I don't even know if I meet the GPA requirement because it's buried in a PDF."
+                  <br /><span style={{ fontSize: '0.9rem', opacity: 0.6, marginTop: '1rem', display: 'block' }}>— Elena, 21, Undergrad</span>
+               </div>
+               <div className="sticky-note">
+                  "I just want someone to tell me exactly what my chances are before I spend 5 hours writing an essay."
+                  <br /><span style={{ fontSize: '0.9rem', opacity: 0.6, marginTop: '1rem', display: 'block' }}>— Kevin, 23, First-Gen Student</span>
+               </div>
+            </div>
+            <div className="bento-card" style={{ marginTop: '4rem', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '4rem' }}>
+               <h3 style={{ fontSize: '2rem', fontWeight: 600, marginBottom: '1rem' }}>The Trust Gap</h3>
+               <p className="synapse-body-large">Our competitor analysis showed that while platforms like Scholarships.com have high volume, their <strong>Discovery Match Accuracy</strong> is perceived as very low (around 65%). Students needed a platform they could trust.</p>
+            </div>
+         </section>
+
+         {/* 4. USER PERSONA */}
+         <section>
+            <span className="synapse-section-badge">03. User Persona</span>
+            <h2 className="synapse-header-large">Who are we designing for?</h2>
+            <div className="bento-card" style={{ marginTop: '3rem', background: '#f8fafc' }}>
+               <div className="grid-responsive" style={{ gap: '4rem' }}>
+                  <div>
+                     <div style={{ width: '100px', height: '100px', borderRadius: '50%', background: 'var(--accent-color)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>E</div>
+                     <h3 style={{ fontSize: '2rem', fontWeight: 600, margin: 0 }}>Elena</h3>
+                     <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginBottom: '2rem' }}>21, Undergrad, Study-Abroad Aspirant</p>
+                     <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>Elena is seeking full-ride scholarships for her Master's in Europe. She’s overwhelmed by the sheer number of portals and often misses deadlines because her current tracking system is failing her.</p>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                     <div className="linear-card">
+                        <div className="linear-card-header">Goals</div>
+                        <div className="linear-card-body" style={{ padding: '1.5rem' }}>
+                           <ul style={{ paddingLeft: '1.2rem', color: 'var(--text-secondary)', lineHeight: 1.8, margin: 0 }}>
+                              <li>Curated scholarship matches</li>
+                              <li>Automated deadline reminders</li>
+                              <li>Eligibility score check</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div className="linear-card">
+                        <div className="linear-card-header">Frustrations</div>
+                        <div className="linear-card-body" style={{ padding: '1.5rem' }}>
+                           <ul style={{ paddingLeft: '1.2rem', color: 'var(--text-secondary)', lineHeight: 1.8, margin: 0 }}>
+                              <li>Redundant application forms</li>
+                              <li>Vague eligibility criteria</li>
+                              <li>Information overload</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         {/* 5. USER JOURNEY MAP */}
+         <section>
+            <span className="synapse-section-badge">04. Journey Map</span>
+            <h2 className="synapse-header-large">Mapping the friction points.</h2>
+            <div className="bento-card" style={{ marginTop: '3rem', padding: '4rem', background: 'var(--bg-secondary)', border: '1px solid var(--glass-border)', textAlign: 'center', cursor: 'zoom-in' }} onClick={() => setSelectedImage("/assets/synapse_flow.png")}>
+               <img src="/assets/synapse_flow.png" alt="Journey Map" style={{ width: '100%', maxHeight: '500px', objectFit: 'contain' }} />
+               <p style={{ marginTop: '2rem', color: 'var(--text-muted)' }}>We identified critical drop-off points during the 'Eligibility Review' phase, creating an opportunity for AI intervention.</p>
+            </div>
+         </section>
+
+         {/* 6. AI MATCHING SYSTEM */}
+         <section>
+            <span className="synapse-section-badge">05. AI Strategy</span>
+            <h2 className="synapse-header-large">The Recommendation Engine</h2>
+            <p className="synapse-body-large" style={{ marginBottom: '4rem' }}>
+               Instead of basic keyword matching, we designed a sophisticated visual workflow that explains to the user exactly <em>why</em> they are a match.
+            </p>
+            <div className="bento-grid">
+               <div className="bento-card col-span-6 soft-gradient-bg">
+                  <h3 style={{ fontSize: '1.5rem', fontWeight: 600, marginBottom: '1rem' }}>Profile Analysis</h3>
+                  <p style={{ color: 'var(--text-secondary)' }}>The system parses the student's academic history, background, and goals to create a structured vector profile.</p>
+               </div>
+               <div className="bento-card col-span-6" style={{ borderTop: '4px solid var(--accent-color)' }}>
+                  <h3 style={{ fontSize: '1.5rem', fontWeight: 600, marginBottom: '1rem' }}>Eligibility Scoring</h3>
+                  <p style={{ color: 'var(--text-secondary)' }}>Scholarships are scored from 1-100% based on exact criteria matches, giving users a realistic "Chance of Success".</p>
+               </div>
+            </div>
+         </section>
+
+         {/* 7. INFORMATION ARCHITECTURE */}
+         <section>
+            <span className="synapse-section-badge">06. Structure</span>
+            <h2 className="synapse-header-large">Information Architecture</h2>
+            <p className="synapse-body-large" style={{ marginBottom: '3rem' }}>
+               A dashboard-first strategy. Academic data is heavy, so the challenge was making it feel light. We prioritized a structured layout that keeps metrics visible but hides complex details until needed.
+            </p>
+            <div className="bento-card" style={{ padding: '0', overflow: 'hidden', cursor: 'zoom-in' }} onClick={() => setSelectedImage("/assets/synapse_structure.jpg")}>
+               <img src="/assets/synapse_structure.jpg" alt="Information Architecture" style={{ width: '100%', maxHeight: '500px', objectFit: 'cover' }} />
+            </div>
+         </section>
+
+         {/* 8. WIREFRAMES & ITERATIONS */}
+         <section>
+            <span className="synapse-section-badge">07. Ideation</span>
+            <h2 className="synapse-header-large">Wireframes & Iterations</h2>
+            <div className="wireframe-gallery" style={{ marginTop: '3rem' }}>
+               <div className="wireframe-item" onClick={() => setSelectedImage("/assets/synapse_lofi_sketch.png")} style={{ cursor: 'zoom-in', padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <img src="/assets/synapse_lofi_sketch.png" alt="Lo-Fi Sketch" style={{ width: '100%', height: '300px', objectFit: 'contain' }} />
+                  <p style={{ textAlign: 'center', color: 'var(--text-secondary)', fontWeight: 500 }}>Initial Whiteboarding</p>
+               </div>
+               <div className="wireframe-item" onClick={() => setSelectedImage("/assets/synapse_sketches_collage_1777029736413.png")} style={{ cursor: 'zoom-in', padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <img src="/assets/synapse_sketches_collage_1777029736413.png" alt="Iteration 2" style={{ width: '100%', height: '300px', objectFit: 'contain' }} />
+                  <p style={{ textAlign: 'center', color: 'var(--text-secondary)', fontWeight: 500 }}>Refining the Dashboard</p>
+               </div>
+            </div>
+            <div className="bento-card" style={{ marginTop: '2rem', background: 'var(--bg-secondary)' }}>
+               <h4 style={{ fontWeight: 600, marginBottom: '1rem' }}>UX Decisions:</h4>
+               <ul style={{ paddingLeft: '1.2rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
+                  <li><strong>Simplified Navigation:</strong> Reduced primary tabs from 6 to 3 core actions (Dashboard, Search, Track).</li>
+                  <li><strong>Progress Indicators:</strong> Added visual completion rings instead of text percentages.</li>
+               </ul>
+            </div>
+         </section>
+
+         {/* 9. UI DESIGN SYSTEM */}
+         <section>
+            <span className="synapse-section-badge">08. Design System</span>
+            <h2 className="synapse-header-large">Scalable UI Components</h2>
+            <p className="synapse-body-large" style={{ marginBottom: '3rem' }}>
+               We built a modern, clean SaaS design system prioritizing clarity over density. The aesthetic relies on soft shadows, sharp typography, and a calming purple/blue palette.
+            </p>
+            <div className="bento-card" style={{ padding: '0', overflow: 'hidden', background: 'var(--bg-secondary)', cursor: 'zoom-in' }} onClick={() => setSelectedImage("/assets/synapse_design_system_v2_1777029758138.png")}>
+               <img src="/assets/synapse_design_system_v2_1777029758138.png" alt="Design System" style={{ width: '100%', maxHeight: '600px', objectFit: 'contain' }} />
+            </div>
+         </section>
+
+         {/* 10. HIGH-FIDELITY UI SCREENS */}
+         <section>
+            <span className="synapse-section-badge">09. Final Polish</span>
+            <h2 className="synapse-header-large">High-Fidelity Screens</h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem', marginTop: '4rem' }}>
+               
+               <div className="grid-responsive" style={{ alignItems: 'center' }}>
+                  <div>
+                     <h3 style={{ fontSize: '2rem', fontWeight: 600, marginBottom: '1rem' }}>The Smart Dashboard</h3>
+                     <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, fontSize: '1.1rem' }}>A centralized hub showing profile strength, upcoming deadlines, and active application statuses at a glance.</p>
+                  </div>
+                  <div className="bento-card" style={{ padding: '1rem', cursor: 'zoom-in' }} onClick={() => setSelectedImage("/assets/synapse_overview_screen_v2_1777029777688.png")}>
+                     <img src="/assets/synapse_overview_screen_v2_1777029777688.png" alt="Dashboard UI" style={{ width: '100%', borderRadius: '16px' }} />
+                  </div>
+               </div>
+
+               <div className="grid-responsive" style={{ alignItems: 'center' }}>
+                  <div className="bento-card" style={{ padding: '1rem', cursor: 'zoom-in', order: -1 }} onClick={() => setSelectedImage("/assets/synapse_library_screen_v2_1777029797497.png")}>
+                     <img src="/assets/synapse_library_screen_v2_1777029797497.png" alt="Library UI" style={{ width: '100%', borderRadius: '16px' }} />
+                  </div>
+                  <div>
+                     <h3 style={{ fontSize: '2rem', fontWeight: 600, marginBottom: '1rem' }}>Knowledge Library</h3>
+                     <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, fontSize: '1.1rem' }}>Consolidated documents and AI summaries in a single view, significantly reducing navigation friction.</p>
+                  </div>
+               </div>
+
+            </div>
+         </section>
+
+         {/* 11. RESPONSIVE EXPERIENCE */}
+         <section>
+            <span className="synapse-section-badge">10. Adaptability</span>
+            <h2 className="synapse-header-large">Responsive UX</h2>
+            <div className="bento-card" style={{ padding: '4rem', textAlign: 'center', background: 'var(--bg-secondary)', border: '1px dashed var(--glass-border)' }}>
+               <h3 style={{ fontSize: '1.5rem', color: 'var(--text-muted)' }}>Mobile Layouts</h3>
+               <p style={{ color: 'var(--text-secondary)', marginTop: '1rem' }}>The complex table views elegantly collapse into stackable cards for mobile, preserving the exact same functionality without horizontal scrolling.</p>
+               <div style={{ marginTop: '2rem', color: 'var(--accent-color)', fontWeight: 600, fontStyle: 'italic' }}>
+                  Mobile screens available in Figma prototype
+               </div>
+            </div>
+         </section>
+
+         {/* 12. PROTOTYPE & INTERACTIONS */}
+         <section>
+            <span className="synapse-section-badge">11. Motion</span>
+            <h2 className="synapse-header-large">Interactions & Prototyping</h2>
+            <p className="synapse-body-large" style={{ marginBottom: '2rem' }}>
+               Micro-animations were kept subtle (150ms-300ms) to maintain a premium, professional feel. Hover states on scholarship cards elevate the content to invite interaction.
+            </p>
+            <a href="https://figma.com/placeholder-synapse-link" target="_blank" rel="noreferrer" style={{ display: 'inline-flex', padding: '1rem 2rem', background: 'var(--text-primary)', color: 'var(--bg-primary)', borderRadius: '99px', textDecoration: 'none', fontWeight: 600, alignItems: 'center', gap: '0.5rem' }}>
+               View Interactive Prototype ↗
+            </a>
+         </section>
+
+         {/* 13. IMPACT & OUTCOMES */}
+         <section>
+            <span className="synapse-section-badge">12. Results</span>
+            <h2 className="synapse-header-large">Measurable Impact</h2>
+            <div className="bento-grid" style={{ marginTop: '3rem' }}>
+               <div className="bento-card col-span-4" style={{ textAlign: 'center' }}>
+                  <div className="soft-gradient-text" style={{ fontSize: '3.5rem', fontWeight: 700, marginBottom: '0.5rem' }}>42%</div>
+                  <p style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>Decrease in task completion time</p>
+               </div>
+               <div className="bento-card col-span-4" style={{ textAlign: 'center' }}>
+                  <div className="soft-gradient-text" style={{ fontSize: '3.5rem', fontWeight: 700, marginBottom: '0.5rem' }}>78%</div>
+                  <p style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>Reduction in user errors</p>
+               </div>
+               <div className="bento-card col-span-4" style={{ textAlign: 'center' }}>
+                  <div className="soft-gradient-text" style={{ fontSize: '3.5rem', fontWeight: 700, marginBottom: '0.5rem' }}>+60%</div>
+                  <p style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>Increase in confidence score</p>
+               </div>
+            </div>
+         </section>
+
+         {/* 14. KEY LEARNINGS */}
+         <section>
+            <span className="synapse-section-badge">13. Reflections</span>
+            <h2 className="synapse-header-large">Key Learnings</h2>
+            <div className="grid-responsive" style={{ marginTop: '3rem' }}>
+               <div className="linear-card">
+                  <div className="linear-card-header">Designing AI Experiences</div>
+                  <div className="linear-card-body" style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                     AI features must be transparent. Users trust the AI much more when it explicitly explains *why* it recommended a scholarship, rather than just acting as a black box.
+                  </div>
+               </div>
+               <div className="linear-card">
+                  <div className="linear-card-header">Cognitive Overload</div>
+                  <div className="linear-card-body" style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                     Data-heavy interfaces require incredibly strict visual hierarchy. Simplicity isn't just about removing data; it's about organizing it so it feels invisible until the user specifically needs it.
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         {/* 15. FINAL PRESENTATION STYLE (Footer) */}
+         <section style={{ textAlign: 'center', borderTop: '1px solid var(--glass-border)', paddingBottom: '4rem', marginBottom: '4rem' }}>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '2rem' }}>End of Case Study</h3>
+            <Link to="/" style={{ display: 'inline-flex', padding: '1.2rem 3rem', background: 'var(--text-primary)', color: 'var(--bg-primary)', borderRadius: '99px', textDecoration: 'none', fontWeight: 600 }}>
+               Return to Index
+            </Link>
+         </section>
+
+       </div>
+
+       {/* Full page background fix for lightbox overlay inside wrapper */}
+       <style>{`
+          body {
+            background-color: var(--bg-primary); /* ensure body color is light when on this page */
+          }
+       `}</style>
+    </div>
+  );
+};
+
 const ProjectCaseStudy = () => {
   const { id } = useParams<{ id: string }>();
   const isStreetBite = id === 'streetbites';
@@ -424,6 +738,76 @@ const ProjectCaseStudy = () => {
   }, []);
 
   if (!project && id !== 'streetbites') return <div className="container" style={{ paddingTop: '10rem', textAlign: 'center' }}><Link to="/">Return Home</Link></div>;
+
+  if (isSynapseScholar) {
+    return (
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+        <SynapseScholarRedesign setSelectedImage={setSelectedImage} />
+        {/* --- Lightbox Modal specifically for SynapseScholar to avoid duplicating whole structure --- */}
+        <AnimatePresence>
+          {selectedImage && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedImage(null)}
+              style={{
+                position: 'fixed',
+                inset: 0,
+                zIndex: 9999,
+                background: 'rgba(255, 255, 255, 0.9)',
+                backdropFilter: 'blur(20px)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: 'clamp(1rem, 5vw, 4rem)',
+                cursor: 'zoom-out'
+              }}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+                style={{ position: 'relative', maxWidth: '100%', maxHeight: '100%' }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img 
+                  src={selectedImage} 
+                  alt="Quick View" 
+                  style={{ 
+                    display: 'block', 
+                    maxWidth: '90vw', 
+                    maxHeight: '90vh', 
+                    borderRadius: '12px',
+                    boxShadow: '0 40px 100px rgba(0,0,0,0.1)'
+                  }} 
+                />
+                <button 
+                  onClick={() => setSelectedImage(null)}
+                  style={{
+                    position: 'absolute',
+                    top: '-3rem',
+                    right: 0,
+                    background: 'none',
+                    border: 'none',
+                    color: 'var(--text-primary)',
+                    fontSize: '1rem',
+                    cursor: 'pointer',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em',
+                    fontWeight: 600
+                  }}
+                >
+                  Close (ESC)
+                </button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.div>
+    );
+  }
 
   return (
     <motion.div 

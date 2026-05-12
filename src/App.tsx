@@ -83,18 +83,68 @@ function App() {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
+  const [locationName, setLocationName] = useState(() => {
+    try {
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      return tz ? tz.split('/')[tz.split('/').length - 1].replace(/_/g, ' ') : "Local";
+    } catch (e) {
+      return "Local";
+    }
+  });
   const [time, setTime] = useState("");
+
   useEffect(() => {
+    const fetchIPLocation = () => {
+      fetch('https://get.geojs.io/v1/ip/geo.json')
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.city) {
+            setLocationName(data.city);
+          }
+        })
+        .catch(err => console.error("Could not fetch IP location:", err));
+    };
+
+    // Try HTML5 Geolocation for EXACT location
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`)
+            .then(res => res.json())
+            .then(data => {
+              if (data) {
+                // Try to get the most specific locality available
+                const exactCity = data.locality || data.city || data.principalSubdivision;
+                if (exactCity) {
+                  setLocationName(exactCity);
+                } else {
+                  fetchIPLocation();
+                }
+              } else {
+                fetchIPLocation();
+              }
+            })
+            .catch((err) => {
+              console.error("Reverse geocoding failed:", err);
+              fetchIPLocation();
+            });
+        },
+        (error) => {
+          console.error("Geolocation denied or failed:", error);
+          // If user denies permission or it fails, fallback to IP
+          fetchIPLocation();
+        },
+        { timeout: 10000, enableHighAccuracy: true } // Request highest accuracy
+      );
+    } else {
+      fetchIPLocation();
+    }
+
     const updateTime = () => {
       const now = new Date();
-      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-      let locationName = "Local";
-      if (timeZone) {
-        const parts = timeZone.split('/');
-        locationName = parts[parts.length - 1].replace(/_/g, ' ');
-      }
       const options: Intl.DateTimeFormatOptions = { hour: '2-digit', minute: '2-digit', hour12: false };
-      setTime(locationName + " • " + now.toLocaleTimeString('en-US', options));
+      setTime(now.toLocaleTimeString('en-US', options));
     };
     updateTime();
     const interval = setInterval(updateTime, 10000);
@@ -131,7 +181,7 @@ function App() {
             </nav>
 
             <div className="header-actions">
-              <span className="clock" suppressHydrationWarning>{time}</span>
+              <span className="clock" suppressHydrationWarning>{locationName} • {time}</span>
               <button
                 onClick={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
                 className="nav-link theme-toggle"
